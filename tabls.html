@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="year">
+        <div id="yearSliderContainer" class="slider">
+            <label for="yearSlider" class="sliderlabel">Select a Year:</label>
+            <input type="range" id="yearSlider" class="yearSlider" min="1995" max="2021" step="1" value="2021" oninput="loadContent(this.value);">
+            <div class="slider-label" style="left: 0%;">1995</div>
+            <div class="slider-label" style="left: 35%;">2005</div>
+            <div class="slider-label" style="left: 70%;">2015</div>
+            <div class="slider-label" style="left: 100%;">2021</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tabs">
+            <div id="gdp" class="eg-tab">
+                <input type="radio" id="tab-1" name="eg-tabs" checked>
+                <label for="tab-1">GDP</label>
+                <div class="eg-content">
+                    <h1 id="mainTitle">Real GDP growth</h1>                    
+                    <p>
+                        Annual percent change
+                    </p>
+                    <div class="container1">
+                        <div class="layer">
+                            <div id="gdpgrowth" class="map"></div>
+                            <div id="top" class="top">
+                                <h2>Top 5 Countries</h2>
+                                <table id="ranking-ascending">
+                                    <tbody id="topCountriesTableBody">
+                                        <!-- Rows will be added dynamically here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="chartcontainer">
+                            <div class="chart">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                            <div id="bottom" class="bottom">
+                                <h2>Bottom 5 Countries</h2>
+                                <table id="ranking-descending">
+                                    <tbody id="bottomCountriesTableBody">
+                                        <!-- Rows will be added dynamically here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="poverty" class="eg-tab">
+                <input type="radio" id="tab-2" name="eg-tabs">
+                <label for="tab-2">Poverty</label>
+                <div class="eg-content">
+                    <h1 id="mainTitle">Tracking Poverty Rates in High GDP Nations From 1995 to 2021</h1>
+
+                    <!-- Paragraph below the main title -->
+                    <p>
+                        Extreme poverty is defined as living below the International Poverty Line of $2.15 per day. This data is adjusted for inflation  and for differences
+                        in the cost of living between countries.
+                    </p>
+
+                    <!-- HTML dropdown/select element -->
+                    <div id="chart-container">
+                        <canvas id="bubbleChart"></canvas>
+                        <div id="lineChartPopup">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="unemployment" class="eg-tab">
+                <input type="radio" id="tab-4" name="eg-tabs">
+                <label for="tab-4">Unemployment</label>
+                <div class="eg-content">
+                    <!-- Main Title -->
+                    <h1 id="mainTitle">What Is the Connection Between Economic Growth and Jobs?</h1>
+
+                    <!-- Paragraph below the main title -->
+                    <p>
+                        Unemployment is the percentage of the workforce that is currently not employed.
+                    </p>
+                    <div id="chart-container">
+                        <canvas id="bubbleChart"></canvas>
+                        <div id="lineChartPopup">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="hdi" class="eg-tab">
+                <input type="radio" id="tab-5" name="eg-tabs">
+                <label for="tab-5">HDI</label>
+                <div class="eg-content">
+                    <!-- Main Title -->
+                    <h1 id="mainTitle">Understanding Human Development Index (HDI) From 1995 to 2021</h1>
+
+                    <!-- Paragraph below the main title -->
+                    <p>
+                        The Human Development Index (HDI) measures human well-being in terms of health, education, and living standards.
+                    </p>
+                    <div id="chart-container">
+                        <canvas id="bubbleChart"></canvas>
+                        <div id="lineChartPopup">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="literacy" class="eg-tab">
+                <input type="radio" id="tab-3" name="eg-tabs">
+                <label for="tab-3">Literacy</label>
+                <div class="eg-content">
+                    <!-- Main Title -->
+                    <h1 id="mainTitle">Impact of Literacy on Economic Growth</h1>
+
+                    <!-- Paragraph below the main title -->
+                    <p>
+                        Literacy is the ability to read, write, and comprehend written information, enabling effective communication and participation in society
+                    </p>
+                    <div id="chart-container">
+                        <canvas id="bubbleChart"></canvas>
+                        <div id="lineChartPopup">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
