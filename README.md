@@ -1,5 +1,5 @@
 
-#  The Dynamics of Social Equity and GDP Growth A Global Outlook
+#  The Dynamics of  GDP Growth and Socioeconomic Indicators - A Global Outlook
 
 ## Project Overview:
 This project is a web application for visualizing various economic indicators such as GDP, Poverty, Unemployment, HDI (Human Development Index), and Literacy. It leverages libraries like Plotly.js and Chart.js to render interactive charts and tables. Users can select different years through a slider and switch between metrics via tabs.
