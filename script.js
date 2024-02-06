@@ -462,8 +462,8 @@ function updateMap(selectedYear) {
 
 function processCountryData(countryValues) {
     for (const key in countryValues) {
-        if (parseInt(key) < 1995 && parseInt(key) >2022) {
-            delete jsonData[key];
+        if (parseInt(key) < 1995 || parseInt(key) >2022) {
+            delete countryValues[key];
         }
     }
     return countryValues

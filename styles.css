@@ -214,10 +214,7 @@ a {
     width:50%;
 
 }
-.chart canvas {
-    width: 80% !important;
-    height: 300px !important;
-}
+
 .container .layer,
 .container .chartcontainer {
     width: 100%;
